@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MybatisInterface.UserMapper">
+    <!--????????-->
+    <resultMap id="userMap" type="Entity.User">
+        <id property="id" column="id" javaType="java.lang.Integer"/>
+        <result property="account" column="account" javaType="java.lang.String"/>
+        <result property="username" column="username" javaType="java.lang.String"/>
+        <result property="sex" column="sex" javaType="java.lang.String"/>
+    </resultMap>
+
+    <resultMap id="userInfoMap" type="Entity.UserInfo">
+        <id property="id" column="id" javaType="java.lang.Integer"/>
+        <result property="user_id" column="user_id" javaType="java.lang.Integer"/>
+        <result property="address" column="address" javaType="java.lang.String"/>
+        <result property="personal_sign" column="personal_sign" javaType="java.lang.String"/>
+    </resultMap>
+
+    <insert id="insertUser" parameterType="Entity.User">
+        insert into user(username,password,sex,account) values(#{username},#{password},#{sex},#{account})
+    </insert>
+    <select id="login" resultMap="userMap" parameterType="Entity.User">
+        select id,username,sex,account from user where account=#{account} AND password=#{password}
+    </select>
+    <select id="getAllUser" resultMap="userMap">
+        SELECT id,username,sex,account from user
+    </select>
+    <select id="getUser" resultMap="userMap" parameterType="java.lang.Integer">
+        SELECT id,username,sex,account FROM user WHERE id=#{id}
+    </select>
+    <update id="modifyPassword" parameterType="Entity.User">
+        UPDATE user set password=#{password} WHERE id=#{id}
+    </update>
+    <select id="getUserID" resultMap="userMap" parameterType="Entity.User">
+        SELECT id FROM user where account=#{account}
+    </select>
+    <insert id="insertUserInfo" parameterType="Entity.UserInfo">
+        INSERT INTO user_info(id,user_id,address,personal_sign) VALUES (#{id},#{user_id},#{address},#{personal_sign})
+    </insert>
+    <select id="getUserInfo" resultMap="userInfoMap" parameterType="java.lang.Integer">
+        SELECT id,user_id,address,personal_sign FROM user_info WHERE user_id=#{user_id}
+    </select>
+    <update id="updateUserInfo" parameterType="Entity.UserInfo">
+        UPDATE user_info SET address=#{address},personal_sign=#{personal_sign} WHERE user_id=#{user_id}
+    </update>
+</mapper>  
