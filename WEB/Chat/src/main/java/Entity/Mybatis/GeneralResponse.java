@@ -1,11 +1,11 @@
-package Entity;
+package Entity.Mybatis;
 
 /**
- * Created by Clanner on 2016/12/18.
+ * Created by Clanner on 2016/12/6.
  */
 public class GeneralResponse {
     private int code;
-    private String response;
+    private String Response;
 
     public int getCode() {
         return code;
@@ -16,10 +16,10 @@ public class GeneralResponse {
     }
 
     public String getResponse() {
-        return response;
+        return Response;
     }
 
     public void setResponse(String response) {
-        this.response = response;
+        Response = response;
     }
 }

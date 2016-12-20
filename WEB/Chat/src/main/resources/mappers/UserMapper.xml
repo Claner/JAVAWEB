@@ -45,4 +45,4 @@
     <update id="updateUserInfo" parameterType="Entity.UserInfo">
         UPDATE user_info SET address=#{address},personal_sign=#{personal_sign} WHERE user_id=#{user_id}
     </update>
-</mapper>  
+</mapper>

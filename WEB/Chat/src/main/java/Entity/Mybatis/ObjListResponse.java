@@ -1,13 +1,12 @@
-package Entity;
+package Entity.Mybatis;
 
 import java.util.List;
 
 /**
- * Created by Clanner on 2016/12/18.
+ * Created by Clanner on 2016/12/7.
  */
 public class ObjListResponse {
     private int code;
-    private List<Object> response;
 
     public int getCode() {
         return code;
@@ -24,4 +23,6 @@ public class ObjListResponse {
     public void setResponse(List<Object> response) {
         this.response = response;
     }
+
+    private List<Object> response;
 }

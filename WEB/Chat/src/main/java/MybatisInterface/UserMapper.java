@@ -1,7 +1,7 @@
 package MybatisInterface;
 
-import Entity.User;
-import Entity.UserInfo;
+import Entity.Mybatis.User;
+import Entity.Mybatis.UserInfo;
 
 import java.util.List;
 

@@ -1,10 +1,10 @@
-package Entity;
+package Entity.Mybatis;
 
 /**
- * Created by Clanner on 2016/12/18.
+ * Created by Clanner on 2016/12/7.
  */
 public class ObjResponse {
-    private int code;
+    private int code = 20000;
     private Object response;
 
     public int getCode() {

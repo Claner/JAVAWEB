@@ -1,4 +1,4 @@
-package Controller;
+package Controller.Mybatis;
 
 import org.apache.log4j.chainsaw.Main;
 import org.springframework.stereotype.Controller;
@@ -11,17 +11,18 @@ import java.sql.SQLException;
 
 /**
  * Created by Clanner on 2016/12/6.
+ * 类名不可重复
  */
-@RequestMapping("/Main")
+@RequestMapping("/Mybatis//Main")
 @Controller
-public class MainController {
+public class Mybatis_MainController {
 
     private final String URL = "jdbc:mysql://127.0.0.1:3306/chat";
     private final String USER = "root";
     private final String PASSWORD = "";
     private static Connection connection;
 
-    public MainController(){
+    public Mybatis_MainController(){
         System.out.println("初始化Connection");
         try {
             Class.forName("com.mysql.jdbc.Driver");

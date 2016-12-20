@@ -1,4 +1,4 @@
-package Entity;
+package Entity.Mybatis;
 
 /**
  * Created by Clanner on 2016/12/11.
